@@ -1,0 +1,185 @@
+.footer {
+  background: #00695c;
+  color: white;
+  padding: 50px 0;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+/* Footer Left */
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.lab-full-name {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-label {
+  font-weight: bold;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.contact-person {
+  font-size: 1.2rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+.contact-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-icon .icon {
+  font-size: 1.2rem;
+}
+
+/* Footer Right */
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.location-info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.location-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.location-icon {
+  font-size: 1.2rem;
+}
+
+.location-label {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.address {
+  margin: 0;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Map Container */
+.map-container {
+  margin-top: 20px;
+}
+
+.map-placeholder {
+  background: #004d40;
+  border-radius: 8px;
+  padding: 20px;
+  height: 200px;
+  position: relative;
+}
+
+.map-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.map-pin {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.map-label {
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #b2dfdb;
+}
+
+.map-controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.map-btn {
+  background: #00897b;
+  color: white;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.map-btn:hover {
+  background: #00796b;
+}
+
+.map-link {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.map-link a {
+  color: #b2dfdb;
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+.map-link a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .lab-full-name {
+    font-size: 1.2rem;
+  }
+  
+  .map-placeholder {
+    height: 150px;
+  }
+}
