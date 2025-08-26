@@ -1,28 +1,17 @@
 import React from 'react';
 import './HeroSection.css';
+import homeImage from '../../image/image 6.jpg';
+import Img from '../common/Img';
 
 const HeroSection = () => {
   return (
-    <section id="hero-section" className="hero-section">
-      <div className="hero-content">
-        <div className="hero-image">
-          <div className="presentation-overlay">
-            <div className="presentation-content">
-              <div className="vinuni-logo-overlay">VINUNIVERSITY</div>
-              <h2 className="presentation-title">RECENT ADVANCES IN DRUG DESIGN</h2>
-              <p className="presentation-subtitle">DEEP MACHINE LEARNING AND MOLECULAR DYNAMICS SIMULATIONS</p>
-            </div>
-          </div>
-          <div className="people-overlay">
-            {/* Placeholder for people image */}
-            <div className="people-placeholder">
-              <div className="people-icon">👥</div>
-              <p>Group of researchers and students</p>
-            </div>
-          </div>
+<div className="hero-image">
+         <Img 
+              src={homeImage} 
+              alt="Home Image" 
+              className="home-image"
+            />
         </div>
-      </div>
-    </section>
   );
 };
 

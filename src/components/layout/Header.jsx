@@ -35,8 +35,6 @@ const Header = () => {
               src={vinuniLogo} 
               alt="VinUniversity Logo" 
               className="vinuni-logo-img"
-              width={30}
-              height={30}
             />
           </div>
           <div className="cei-logo-container">
@@ -44,8 +42,6 @@ const Header = () => {
               src={ceiLogo} 
               alt="CEI Logo" 
               className="cei-logo-img"
-              width={30}
-              height={30}
             />
           </div>
         </div>

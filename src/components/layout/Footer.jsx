@@ -1,5 +1,6 @@
 import React from 'react';
 import './Footer.css';
+import { MdEmail, MdPhone, MdLocationOn } from 'react-icons/md';
 
 const Footer = () => {
   return (
@@ -14,11 +15,11 @@ const Footer = () => {
             <p className="contact-person">Ms. Hong Phuong</p>
             <div className="contact-icons">
               <div className="contact-icon">
-                <span className="icon">📧</span>
+                <MdEmail className="icon" />
                 <span>hong.phuong@vinuni.edu.vn</span>
               </div>
               <div className="contact-icon">
-                <span className="icon">📞</span>
+                <MdPhone className="icon" />
                 <span>+84 24 7300 0000</span>
               </div>
             </div>
@@ -28,7 +29,7 @@ const Footer = () => {
         <div className="footer-right">
           <div className="location-info">
             <div className="location-header">
-              <span className="location-icon">📍</span>
+              <MdLocationOn className="location-icon" />
               <span className="location-label">Location</span>
             </div>
             <p className="address">
@@ -38,19 +39,17 @@ const Footer = () => {
           </div>
           
           <div className="map-container">
-            <div className="map-placeholder">
-              <div className="map-content">
-                <div className="map-pin">📍</div>
-                <div className="map-label">VinUniversity</div>
-                <div className="map-controls">
-                  <button className="map-btn">+</button>
-                  <button className="map-btn">-</button>
-                </div>
-                <div className="map-link">
-                  <a href="#report">Report a map error</a>
-                </div>
-              </div>
-            </div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1862.5532613806854!2d105.9421023!3d20.9883667!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135afe809f342c5%3A0x136290b61ba411db!2sVinUniversity!5e0!3m2!1sen!2s!4v1756219382037!5m2!1sen!2s"
+              width="100%"
+              height="300"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="VinUniversity Location"
+              className="google-map"
+            ></iframe>
           </div>
         </div>
       </div>

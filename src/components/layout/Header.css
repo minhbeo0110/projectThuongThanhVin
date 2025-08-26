@@ -10,7 +10,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
+  padding: 20px;
   border-bottom: 1px solid #e0e0e0;
 }
 
@@ -24,9 +24,9 @@
 
 .university-logos {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 8px;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
 }
 
 .vinuni-logo-container,
@@ -59,7 +59,7 @@
 
 /* Navigation Styles - Light Teal Background */
 .navigation {
-  background: #e0f2f1; /* Light teal background */
+  background: #BEE4DF; /* Light teal background */
   padding: 0;
   border-bottom: 1px solid #b2dfdb;
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
@@ -102,7 +102,7 @@
 /* Active State - White underline */
 .nav-item.active a {
   background: #b2dfdb; /* Slightly darker teal for active */
-  color: #1a237e;
+  color: #000000;
   position: relative;
   font-weight: 600;
   box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
@@ -114,11 +114,10 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 3px;
-  background: white; /* White underline */
   border-radius: 2px 2px 0 0;
   animation: slideIn 0.3s ease-out;
   box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  border-bottom: 2px solid #008080;
 }
 
 /* Hover State */
