@@ -62,12 +62,15 @@
 .date-box .month {
   font-size: 0.8rem;
   font-weight: 500;
+  font-family: 'Times New Roman', Times, serif;
   text-transform: uppercase;
 }
 
 .date-box .day {
-  font-size: 1.5rem;
+  margin-top: 10px;
+  font-size: 2rem;
   font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
   line-height: 1;
 }
 

@@ -1,17 +1,27 @@
 import React from 'react';
-import Header from './components/layout/Header';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import LayoutCommon from './components/layout/LayoutCommon';
 import HomePage from './components/home/HomePage';
-import Footer from './components/layout/Footer';
+import AboutUsPage from './pages/AboutUsPage';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <main className="main-content">
-        <HomePage />
-      </main>
-      <Footer />
+      <Router>
+        <Routes>
+          <Route path="/" element={
+            <LayoutCommon>
+              <HomePage />
+            </LayoutCommon>
+          } />
+          <Route path="/about-us" element={
+            <LayoutCommon>
+              <AboutUsPage />
+            </LayoutCommon>
+          } />
+        </Routes>
+      </Router>
     </div>
   );
 }

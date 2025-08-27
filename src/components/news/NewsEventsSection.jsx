@@ -1,6 +1,7 @@
 import React from 'react';
 import './NewsEventsSection.css';
 import Img from '../common/Img';
+import Button from '../common/Button';
 import newsImage from '../../image/image 9.jpg';
 
 const NewsCard = ({ month, day, title, category, link }) => {
@@ -71,6 +72,14 @@ const NewsEventsSection = () => {
               link="/events/comosa2025"
             />
           </div>
+        </div>
+        
+        <div style={{ textAlign: 'center', marginTop: '100px' }}>
+          <Button 
+            text="Read More" 
+            onClick={() => window.open('/news', '_blank')}
+            className="primary"
+          />
         </div>
       </div>
     </section>

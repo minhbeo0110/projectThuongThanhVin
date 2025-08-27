@@ -1,25 +1,47 @@
 import React, { useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import './Header.css';
 import Img from '../common/Img';
 import vinuniLogo from '../../image/image 4.jpg';
 import ceiLogo from '../../image/image 5.jpg';
+import { scrollToSection } from '../common/SmoothScroll';
 
 const Header = () => {
-  const [activeItem, setActiveItem] = useState('home');
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [activeItem, setActiveItem] = useState(() => {
+    // Set active item based on current route
+    if (location.pathname === '/about-us') return 'about';
+    return 'home';
+  });
 
   const handleNavClick = (item, event) => {
     event.preventDefault();
     setActiveItem(item);
     
-    // Smooth scroll to section
-    const targetId = item === 'home' ? 'hero-section' : item;
-    const targetElement = document.getElementById(targetId);
+    if (item === 'about') {
+      // Navigate to about-us page using React Router
+      navigate('/about-us');
+      return;
+    }
     
-    if (targetElement) {
-      targetElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
+    if (item === 'home') {
+      // Navigate to home page
+      navigate('/');
+      return;
+    }
+    
+    // Smooth scroll to section for other items (only on home page)
+    if (location.pathname === '/') {
+      const targetId = item === 'home' ? 'hero-section' : item;
+      const targetElement = document.getElementById(targetId);
+      
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
     }
   };
 
@@ -57,13 +79,47 @@ const Header = () => {
               Home
             </a>
           </li>
-          <li className={`nav-item ${activeItem === 'about' ? 'active' : ''}`}>
+          <li className={`nav-item dropdown ${activeItem === 'about' ? 'active' : ''}`}>
             <a 
               href="#about" 
               onClick={(e) => handleNavClick('about', e)}
             >
               About us
             </a>
+            <ul className="dropdown-menu">
+              <li className="dropdown-item">
+                <a 
+                  href="#research-area" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    if (location.pathname === '/about-us') {
+                      scrollToSection('research-areas');
+                    } else {
+                      navigate('/about-us');
+                      setTimeout(() => scrollToSection('research-areas'), 100);
+                    }
+                  }}
+                >
+                  Research area
+                </a>
+              </li>
+              <li className="dropdown-item">
+                <a 
+                  href="#people" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    if (location.pathname === '/about-us') {
+                      scrollToSection('people');
+                    } else {
+                      navigate('/about-us');
+                      setTimeout(() => scrollToSection('people'), 100);
+                    }
+                  }}
+                >
+                  People
+                </a>
+              </li>
+            </ul>
           </li>
           <li className={`nav-item ${activeItem === 'news' ? 'active' : ''}`}>
             <a 

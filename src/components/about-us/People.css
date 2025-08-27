@@ -1,0 +1,184 @@
+.people-section {
+  margin-top: 100px;
+  background: white;
+  padding: 60px 0;
+}
+
+.director-header {
+  text-align: center;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.director-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #c71f1f;
+  font-family: 'Poppins Bold', 'Helvetica Bold', sans-serif;
+  margin: 0;
+  position: relative;
+  display: inline-block;
+}
+
+.director-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: #c71f1f;
+  border-radius: 2px;
+}
+
+.section-title {
+  font-size: 3rem;
+  color: #000000;
+  font-family: 'Poppins Bold', 'Helvetica Bold', sans-serif;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.people-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.person-card {
+  display: flex;
+  align-items: center;
+  padding: 40px 0;
+  border-bottom: 1px solid #e0e0e0;
+  transition: background-color 0.2s ease;
+}
+
+.person-card:last-child {
+  border-bottom: none;
+}
+
+.person-card:hover {
+  background-color: #f8f9fa;
+}
+
+.person-image {
+  width: 30%;
+  height: 30%;
+  margin-right: 40px;
+  flex-shrink: 0;
+}
+
+.profile-image {
+  object-fit: cover;
+}
+
+.person-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.person-name {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333333;
+  margin: 0 0 12px 0;
+  font-family: 'Arial', 'Helvetica', sans-serif;
+  line-height: 1.3;
+}
+
+.person-title {
+  font-size: 1.1rem;
+  color: #666666;
+  margin: 0 0 18px 0;
+  font-weight: 400;
+  font-family: 'Arial', 'Helvetica', sans-serif;
+  line-height: 1.5;
+  max-width: 600px;
+}
+
+.profile-link {
+  color: #dc3545;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  font-family: 'Arial', 'Helvetica', sans-serif;
+  transition: color 0.2s ease;
+  display: inline-block;
+}
+
+.profile-link:hover {
+  color: #c82333;
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .people-section {
+    padding: 40px 0;
+    margin-top: 60px;
+  }
+  
+  .director-header {
+    margin-bottom: 40px;
+  }
+  
+  .director-title {
+    font-size: 2rem;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+  }
+  
+  .person-card {
+    padding: 20px 0;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .person-image {
+    width: 100px;
+    height: 100px;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  
+  .person-name {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+  
+  .person-title {
+    font-size: 0.9rem;
+    text-align: center;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .director-title {
+    font-size: 1.8rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .person-image {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .person-name {
+    font-size: 1.2rem;
+  }
+  
+  .person-title {
+    font-size: 0.85rem;
+  }
+}
