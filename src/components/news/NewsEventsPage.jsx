@@ -13,9 +13,9 @@ import image37 from '../../image/image 37.jpg';
 import image38 from '../../image/image 38.jpg';
 import image39 from '../../image/image 39.jpg';
 
-const NewsCard = ({ image, title, dateMonth, dateDay, category }) => {
+const NewsCard = ({ image, title, dateMonth, dateDay, category, onClick }) => {
   return (
-    <div className="news-card">
+    <div className="news-card" onClick={onClick}>
       <div className="news-image">
         <Img src={image} alt={title} />
       </div>
@@ -35,9 +35,9 @@ const NewsCard = ({ image, title, dateMonth, dateDay, category }) => {
   );
 };
 
-const EventCard = ({ image, title, dateMonth, dateDay }) => {
+const EventCard = ({ image, title, dateMonth, dateDay, onClick }) => {
   return (
-    <div className="event-card">
+    <div className="event-card" onClick={onClick}>
       <div className="event-image">
         <Img src={image} alt={title} />
         <div className="event-date">
@@ -53,6 +53,10 @@ const EventCard = ({ image, title, dateMonth, dateDay }) => {
 };
 
 const NewsEventsPage = () => {
+  const handleVinSchoolClick = () => {
+    window.open('https://vinschool.edu.vn', '_blank');
+  };
+
   const events = [
     {
       image: image34,
@@ -99,85 +103,78 @@ const NewsEventsPage = () => {
         <h1 className="page-title">NEWS</h1>
         
         <div className="top-section">
-          {/* Featured Article */}
-          <div className="featured-article">
+          {/* Featured Article (image 29) */}
+          <div className="featured-article" onClick={handleVinSchoolClick}>
             <Img src={image29} alt="Featured Article" className="featured-img" />
             <div className="featured-overlay">
-              <h2 className="featured-title">
-                VinUni's CEI and UC Berkeley's CITRIS and the Banatao Institute Sign MOU to Accelerate Smart City Innovation and Sustainability in Vietnam
-              </h2>
-              <a href="#" className="featured-readmore">Read more →</a>
+              <h2 className="featured-title">VinUni's CEI and UC Berkeley's CITRIS and the Banatao Institute Sign MOU to Establish the Center for Environmental Intelligence (CEI)</h2>
+              <a href="#" className="featured-readmore" onClick={(e) => { e.preventDefault(); handleVinSchoolClick(); }}>Read more →</a>
             </div>
           </div>
-
-          {/* Call for Proposal */}
-          <div className="call-for-proposal">
+          
+          {/* Call for Proposal (image 30) */}
+          <div className="call-for-proposal" onClick={handleVinSchoolClick}>
             <div className="news-image">
               <Img src={image30} alt="Call for Proposal" />
             </div>
-
             <div className="news-content-wrapper">
               <div className="news-date">
-                <span className="month">Jan</span>
-                <span className="day">10</span>
+                <span className="month">Dec</span>
+                <span className="day">31</span>
               </div>
               <div className="news-content">
-                <h3 className="news-title">
-                  CALL FOR PROPOSAL – CEI ENVISION Grant 2025
-                </h3>
-                <p className="news-category">Uncategorized</p>
+                <h3 className="news-title">Call for Proposal: Research Collaboration Opportunities</h3>
+                <p className="news-category">Partnership</p>
               </div>
             </div>
           </div>
         </div>
-
-        {/* Bottom 3 News Cards */}
+        
+        {/* Bottom 3 News Cards (images 31, 32, 30) */}
         <div className="bottom-section">
           <NewsCard 
             image={image31} 
-            title="CEI Soft Launch: A First Glance at Our New Home"
+            title="VinUni's CEI and UC Berkeley's CITRIS and the Banatao Institute Sign MOU to Establish the Center for Environmental Intelligence (CEI)" 
             dateMonth="Dec" 
             dateDay="31" 
             category="News"
+            onClick={handleVinSchoolClick}
           />
           <NewsCard 
             image={image32} 
-            title="VinUni and PECC2 Forge Partnership to Advance..."
+            title="Workshop: Capacity Building for Early Career Researchers" 
             dateMonth="Nov" 
             dateDay="01" 
             category="Partnership"
+            onClick={handleVinSchoolClick}
           />
           <NewsCard 
             image={image30} 
-            title="Franconomics 2024: A High-Level Forum on Renewable..."
+            title="HORIZONS2025 - Materials Innovation with AI & Automation" 
             dateMonth="Oct" 
             dateDay="23" 
             category="Forum"
+            onClick={handleVinSchoolClick}
           />
         </div>
-
-        {/* View all news button */}
+        
         <div className="view-all-section">
-          <a href="#" className="view-all-btn">View all news</a>
+          <a href="#" className="view-all-btn" onClick={(e) => { e.preventDefault(); handleVinSchoolClick(); }}>View all news</a>
         </div>
 
         {/* EVENTS SECTION */}
         <h2 className="events-title">EVENTS</h2>
-        
         <div className="events-grid">
           {events.map((event, index) => (
-            <EventCard
-              key={index}
-              image={event.image}
-              title={event.title}
-              dateMonth={event.dateMonth}
-              dateDay={event.dateDay}
+            <EventCard 
+              key={index} 
+              {...event} 
+              onClick={handleVinSchoolClick}
             />
           ))}
         </div>
-
         <div className="view-all-events-section">
-          <a href="#" className="view-all-events-btn">VIEW ALL EVENTS</a>
+          <a href="#" className="view-all-events-btn" onClick={(e) => { e.preventDefault(); handleVinSchoolClick(); }}>VIEW ALL EVENTS</a>
         </div>
       </div>
     </div>

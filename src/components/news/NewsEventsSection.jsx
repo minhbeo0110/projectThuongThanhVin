@@ -22,6 +22,10 @@ const NewsCard = ({ month, day, title, category, link }) => {
 };
 
 const NewsEventsSection = () => {
+  const handleVinSchoolClick = () => {
+    window.open('https://vinschool.edu.vn', '_blank');
+  };
+
   return (
     <section id="news" className="news-events-section">
       <div>
@@ -30,7 +34,7 @@ const NewsEventsSection = () => {
         <div className="news-content">
 
           <div className="left-column">
-            <div className="featured-image">
+            <div className="featured-image" onClick={handleVinSchoolClick}>
               <Img 
                 src={newsImage} 
                 alt="Memorandum of Understanding Signing Ceremony" 
@@ -77,7 +81,7 @@ const NewsEventsSection = () => {
         <div style={{ textAlign: 'center', marginTop: '100px' }}>
           <Button 
             text="Read More" 
-            onClick={() => window.open('/news&events', '_blank')}
+            onClick={handleVinSchoolClick}
             className="primary"
           />
         </div>
