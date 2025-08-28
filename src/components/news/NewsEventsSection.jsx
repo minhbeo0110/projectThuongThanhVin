@@ -4,20 +4,18 @@ import Img from '../common/Img';
 import Button from '../common/Button';
 import newsImage from '../../image/image 9.jpg';
 
-const NewsCard = ({ month, day, title, category, link }) => {
+const NewsCard = ({ month, day, title, category, link, onClick }) => {
   return (
-    <a href={link} className="news-card-link">
-      <div className="news-card">
-        <div className="date-box">
-          <span className="month">{month}</span>
-          <span className="day">{day}</span>
-        </div>
-        <div className="news-card-content">
-          <h3 className="news-title">{title}</h3>
-          <span className="news-category">{category}</span>
-        </div>
+    <div className="news-card" onClick={onClick}>
+      <div className="date-box">
+        <span className="month">{month}</span>
+        <span className="day">{day}</span>
       </div>
-    </a>
+      <div className="news-card-content">
+        <h3 className="news-title">{title}</h3>
+        <span className="news-category">{category}</span>
+      </div>
+    </div>
   );
 };
 
@@ -48,6 +46,7 @@ const NewsEventsSection = () => {
               title="VinUni's CEI and UC Berkeley's CITRIS and the Banatao Institute Sign MOU to..."
               category="NEWS"
               link="/news/mou-signing"
+              onClick={handleVinSchoolClick}
             />
           </div>
 
@@ -58,6 +57,7 @@ const NewsEventsSection = () => {
               title="Workshop: Capacity Building for Early Career Researchers"
               category="NEWS"
               link="/news/workshop-capacity-building"
+              onClick={handleVinSchoolClick}
             />
             
             <NewsCard 
@@ -66,6 +66,7 @@ const NewsEventsSection = () => {
               title="HORIZONS2025 - Materials Innovation with AI & Automation"
               category="EVENTS"
               link="/events/horizons2025"
+              onClick={handleVinSchoolClick}
             />
             
             <NewsCard 
@@ -74,6 +75,7 @@ const NewsEventsSection = () => {
               title="COMOSA2025: The International Conference on Optimization, Modeling, Simulation, and..."
               category="EVENTS"
               link="/events/comosa2025"
+              onClick={handleVinSchoolClick}
             />
           </div>
         </div>
