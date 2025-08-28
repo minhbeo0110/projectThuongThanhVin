@@ -77,7 +77,7 @@ const NewsEventsSection = () => {
         <div style={{ textAlign: 'center', marginTop: '100px' }}>
           <Button 
             text="Read More" 
-            onClick={() => window.open('/news', '_blank')}
+            onClick={() => window.open('/news&events', '_blank')}
             className="primary"
           />
         </div>

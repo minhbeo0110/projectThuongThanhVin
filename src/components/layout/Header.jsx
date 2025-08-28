@@ -12,6 +12,9 @@ const Header = () => {
   const [activeItem, setActiveItem] = useState(() => {
     // Set active item based on current route
     if (location.pathname === '/about-us') return 'about';
+    if (location.pathname === '/news&events') return 'news';
+    if (location.pathname === '/publications') return 'publications';
+    if (location.pathname === '/facilities') return 'facilities';
     return 'home';
   });
 
@@ -28,6 +31,24 @@ const Header = () => {
     if (item === 'home') {
       // Navigate to home page
       navigate('/');
+      return;
+    }
+
+    if (item === 'news') {
+      // Navigate to news page
+      navigate('/news&events');
+      return;
+    }
+
+    if (item === 'publications') {
+      // Navigate to publications page
+      navigate('/publications');
+      return;
+    }
+
+    if (item === 'facilities') {
+      // Navigate to facilities page
+      navigate('/facilities');
       return;
     }
     

@@ -11,23 +11,53 @@
   text-align: center;
   text-decoration: none;
   line-height: 1.5;
+  border: 2px solid #1e3a8a;
+  border-radius: 8px;
 }
 
 /* Variant styles */
 .common-button.primary {
   background-color: #2b54c2;
+  border-color: #2b54c2;
+}
+
+.common-button.primary:hover {
+  background-color: white;
+  color: #2b54c2;
+  border-color: #2b54c2;
 }
 
 .common-button.secondary {
   background-color: #6b7280;
+  border-color: #6b7280;
+}
+
+.common-button.secondary:hover {
+  background-color: white;
+  color: #6b7280;
+  border-color: #6b7280;
 }
 
 .common-button.success {
   background-color: #059669;
+  border-color: #059669;
+}
+
+.common-button.success:hover {
+  background-color: white;
+  color: #059669;
+  border-color: #059669;
 }
 
 .common-button.danger {
   background-color: #dc2626;
+  border-color: #dc2626;
+}
+
+.common-button.danger:hover {
+  background-color: white;
+  color: #dc2626;
+  border-color: #dc2626;
 }
 
 /* Size variants */

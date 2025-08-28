@@ -1,10 +1,10 @@
 import React from 'react';
 import './SupportStaff.css';
 import Img from '../common/Img';
-import image17 from '../../image/image 17.jpg';
-import image18 from '../../image/image 18.jpg';
-import image19 from '../../image/image 19.jpg';
-import image20 from '../../image/image 20.jpg';
+import image17 from '../../image/image 25.jpg';
+import image18 from '../../image/image 26.jpg';
+import image19 from '../../image/image 27.jpg';
+import image20 from '../../image/image 28.jpg';
 
 const SupportStaffCard = ({ image, name, affiliation, role }) => {
   return (

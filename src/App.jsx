@@ -3,6 +3,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LayoutCommon from './components/layout/LayoutCommon';
 import HomePage from './components/home/HomePage';
 import AboutUsPage from './pages/AboutUsPage';
+import NewsEventsPage from './pages/NewsEventsPage';
+import PublicationsPageWrapper from './pages/PublicationsPage';
+import FacilitiesPageWrapper from './pages/FacilitiesPage';
 import './App.css';
 
 function App() {
@@ -18,6 +21,21 @@ function App() {
           <Route path="/about-us" element={
             <LayoutCommon>
               <AboutUsPage />
+            </LayoutCommon>
+          } />
+          <Route path="/news&events" element={
+            <LayoutCommon>
+              <NewsEventsPage />
+            </LayoutCommon>
+          } />
+          <Route path="/publications" element={
+            <LayoutCommon>
+              <PublicationsPageWrapper />
+            </LayoutCommon>
+          } />
+          <Route path="/facilities" element={
+            <LayoutCommon>
+              <FacilitiesPageWrapper />
             </LayoutCommon>
           } />
         </Routes>
