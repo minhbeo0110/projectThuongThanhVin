@@ -10,7 +10,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 20px 0;
   border-bottom: 1px solid #e0e0e0;
 }
 
@@ -84,11 +84,11 @@
 
 .nav-item a {
   display: block;
-  padding: 20px 15px; /* Giảm padding để fit tốt hơn */
+  padding: 10px 15px; /* Giảm padding từ 20px xuống 15px */
   text-decoration: none;
   color: #1a237e; /* Dark blue text */
   font-weight: 500;
-  font-size: 1.3rem;
+  font-size: 1rem; /* Giảm font-size từ 1.3rem xuống 1.1rem */
   transition: all 0.3s ease;
   position: relative;
   height: 100%;
@@ -169,7 +169,7 @@
   }
   
   .nav-item a {
-    padding: 15px 10px;
+    padding: 12px 10px; /* Giảm padding từ 15px xuống 12px cho mobile */
     font-size: 0.9rem;
   }
   

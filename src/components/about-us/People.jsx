@@ -13,8 +13,8 @@ const PersonCard = ({ image, name, title, onClick }) => {
         <Img src={image} alt={name} className="profile-image" />
       </div>
       <div className="person-info">
-        <h3 className="person-name">{name}</h3>
-        <p className="person-title">{title}</p>
+        <span className="person-name">{name}</span>
+        <span className="person-title">{title}</span>
         <span className="profile-link">
           View profile →
         </span>
@@ -48,9 +48,9 @@ const People = () => {
   return (
     <section id="people" className="people-section">
       <div className="people-container">
-        <h2 className="section-title">People</h2>
+        <span className="section-people-title">People</span>
         <div className="director-header">
-          <h1 className="director-title">DIRECTOR</h1>
+          <span className="director-title">DIRECTOR</span>
         </div>
         <div className="people-list">
           {people.map((person, index) => (

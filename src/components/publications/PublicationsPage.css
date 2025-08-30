@@ -10,7 +10,7 @@
 }
 
 .publications-title {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
   color: #c71f1f;
   margin-bottom: 50px;
@@ -172,7 +172,7 @@
   }
   
   .publications-title {
-    font-size: 1.8rem;
+    font-size: 1.3rem;
     margin-bottom: 40px;
   }
   
@@ -181,6 +181,6 @@
   }
   
   .publication-title {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 }

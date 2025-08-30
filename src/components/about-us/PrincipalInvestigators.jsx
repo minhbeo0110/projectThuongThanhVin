@@ -63,7 +63,7 @@ const PrincipalInvestigators = () => {
     <section className="principal-investigators-section">
       <div className="principal-investigators-container">
         <div className="principal-investigators-header">
-          <h1 className="principal-investigators-title">PRINCIPAL INVESTIGATORS</h1>
+          <span className="principal-investigators-title">PRINCIPAL INVESTIGATORS</span>
         </div>
         <div className="principal-investigators-grid">
           {principalInvestigators.map((investigator, index) => (

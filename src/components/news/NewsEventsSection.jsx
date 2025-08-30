@@ -24,7 +24,7 @@ const NewsEventsSection = () => {
   return (
     <section id="news" className="news-events-section">
       <div>
-        <h2 className="section-title">News and Events</h2>
+        <span className="section-news-events-title">News and Eventssss</span>
         
         <div className="news-content">
 

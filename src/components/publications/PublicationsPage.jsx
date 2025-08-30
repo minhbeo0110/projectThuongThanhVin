@@ -64,7 +64,7 @@ const PublicationsPage = () => {
   return (
     <div className="publications-page">
       <div className="publications-container">
-        <h1 className="publications-title">PUBLICATIONS</h1>
+        <span className="publications-title">PUBLICATIONS</span>
         <div className="publications-grid">
           {publications.map((pub, index) => (
             <PublicationCard 

@@ -58,7 +58,7 @@ const SupportStaff = () => {
     <section className="support-staff-section">
       <div className="support-staff-container">
         <div className="support-staff-header">
-          <h1 className="support-staff-title">SUPPORT STAFF</h1>
+          <span className="support-staff-title">SUPPORT STAFF</span>
         </div>
         <div className="support-staff-grid">
           {supportStaff.map((staff, index) => (

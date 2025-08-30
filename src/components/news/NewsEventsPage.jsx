@@ -105,7 +105,7 @@ const NewsEventsPage = () => {
     <div className="news-events-page">
       <div className="news-container">
         {/* NEWS SECTION */}
-        <h1 className="page-title">NEWS</h1>
+        <span className="page-title">NEWS</span>
         
         <div className="top-section">
           {/* Featured Article (image 29) */}

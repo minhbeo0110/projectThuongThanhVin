@@ -41,7 +41,7 @@ const ResearchAreas = () => {
   return (
     <section id="research-areas" className="research-areas-section">
       <div className="research-areas">
-        <h2 className="section-title">Research Areas</h2>
+        <span className="section-research-areas-title">Research Areas</span>
         <div className="research-cards-grid">
           {researchAreas.map((area, index) => (
             <ResearchAreaCard

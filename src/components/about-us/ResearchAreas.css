@@ -8,19 +8,19 @@
   padding: 0 20px;
 }
 
-.section-title {
-    font-size: 3rem;
+.section-research-areas-title {
+    font-size: 1.5rem;
     color: #000000;
     font-family: 'Poppins Bold', 'Helvetica Bold', sans-serif;
     font-weight: bold;
     text-align: left;
-    margin-bottom: 20px;
 }
 
 .research-cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 30px;
+  margin-top: 20px;
 }
 
 .research-area-card {
@@ -47,7 +47,7 @@
 }
 
 .card-title {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: bold;
   color: #000000;
   line-height: 1.3;
@@ -55,7 +55,7 @@
 }
 
 .card-author {
-  font-size: 1.4rem;
+  font-size: 1rem;
   color: #868585;
   margin: 0;
   font-weight: 400;
@@ -93,7 +93,7 @@
 }
 
 @media (max-width: 480px) {
-  .section-title {
+  .section-research-areas-title {
     font-size: 1.8rem;
   }
   

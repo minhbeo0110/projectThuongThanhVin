@@ -11,7 +11,7 @@
 }
 
 .director-title {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   font-weight: bold;
   color: #c71f1f;
   font-family: 'Poppins Bold', 'Helvetica Bold', sans-serif;
@@ -32,8 +32,8 @@
   border-radius: 2px;
 }
 
-.section-title {
-  font-size: 3rem;
+.section-people-title {
+  font-size: 1.5rem;
   color: #000000;
   font-family: 'Poppins Bold', 'Helvetica Bold', sans-serif;
   font-weight: bold;
@@ -83,7 +83,7 @@
 }
 
 .person-name {
-  font-size: 1.8rem;
+  font-size: 1.3rem;
   font-weight: bold;
   color: #333333;
   margin: 0 0 12px 0;
@@ -92,7 +92,7 @@
 }
 
 .person-title {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #666666;
   margin: 0 0 18px 0;
   font-weight: 400;
@@ -104,7 +104,7 @@
 .profile-link {
   color: #dc3545;
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 500;
   font-family: 'Arial', 'Helvetica', sans-serif;
   transition: color 0.2s ease;
@@ -131,7 +131,7 @@
     font-size: 2rem;
   }
   
-  .section-title {
+  .section-people-title {
     font-size: 2.5rem;
     margin-bottom: 30px;
   }
@@ -166,7 +166,7 @@
     font-size: 1.8rem;
   }
   
-  .section-title {
+  .section-people-title {
     font-size: 2rem;
   }
   
