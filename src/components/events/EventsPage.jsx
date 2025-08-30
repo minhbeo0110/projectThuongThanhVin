@@ -1,6 +1,8 @@
 import React from 'react';
 import './EventsPage.css';
 import Img from '../common/Img';
+import Button from '../common/Button';
+import { redirectTo } from '../common/utils';
 
 import image34 from '../../image/image 34.jpg';
 import image35 from '../../image/image 35.jpg';
@@ -9,9 +11,9 @@ import image37 from '../../image/image 37.jpg';
 import image38 from '../../image/image 38.jpg';
 import image39 from '../../image/image 39.jpg';
 
-const EventCard = ({ image, title, dateMonth, dateDay }) => {
+const EventCard = ({ image, title, dateMonth, dateDay, onClick }) => {
   return (
-    <div className="event-card">
+    <div className="event-card" onClick={onClick}>
       <div className="event-image">
         <Img src={image} alt={title} />
         <div className="event-date">
@@ -32,37 +34,43 @@ const EventsPage = () => {
       image: image34,
       title: "Workshop: Capacity Building for Early Career Researchers",
       dateMonth: "Aug",
-      dateDay: "26"
+      dateDay: "26",
+      link: "https://cei.vinuni.edu.vn/event/workshop-capacity-building-for-early-career-researchers/"
     },
     {
       image: image35,
       title: "HORIZONS2025 - Materials Innovation with AI & Automation",
       dateMonth: "Aug",
-      dateDay: "25"
+      dateDay: "25",
+      link: "https://cei.vinuni.edu.vn/event/horizons2025-materials-innovation-with-ai-automation/"
     },
     {
       image: image36,
       title: "COMOSA2025: The International Conference on Optimization, Modeling, Simulation, and...",
       dateMonth: "Aug",
-      dateDay: "15"
+      dateDay: "15",
+      link: "https://cei.vinuni.edu.vn/event/comosa2025-the-international-conference-on-optimization-modeling-simulation-and-analytics/"
     },
     {
       image: image37,
       title: "THE EXPLORERS CLUB - Smart Air, Smart Cities: Digital Solutions for...",
       dateMonth: "Jun",
-      dateDay: "25"
+      dateDay: "25",
+      link: "https://cei.vinuni.edu.vn/event/the-explorers-club-smart-air-smart-cities/"
     },
     {
       image: image38,
       title: "AIRPACT VIETNAM 2025: Smart Air, Smart Cities: Digital Solutions for...",
       dateMonth: "Jun",
-      dateDay: "26"
+      dateDay: "26",
+      link: "https://cei.vinuni.edu.vn/event/airpact-vietnam-2025-smart-air-smart-cities/"
     },
     {
       image: image39,
       title: "Opening Ceremony - Center for Environmental Intelligence (CEI) Office",
       dateMonth: "Mar",
-      dateDay: "13"
+      dateDay: "13",
+      link: "https://cei.vinuni.edu.vn/event/opening-ceremony-center-for-environmental-intelligence-cei-office/"
     }
   ];
 
@@ -79,12 +87,17 @@ const EventsPage = () => {
               title={event.title}
               dateMonth={event.dateMonth}
               dateDay={event.dateDay}
+              onClick={() => redirectTo(event.link, true)}
             />
           ))}
         </div>
 
         <div className="view-all-section">
-          <a href="#" className="view-all-btn">VIEW ALL EVENTS</a>
+          <Button
+            text="VIEW ALL EVENTS"
+            onClick={() => redirectTo('https://vinschool.edu.vn', true)}
+            className="view-all-btn"
+          />
         </div>
       </div>
     </div>

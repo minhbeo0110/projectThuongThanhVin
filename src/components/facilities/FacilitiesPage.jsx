@@ -3,7 +3,7 @@ import './FacilitiesPage.css';
 import Img from '../common/Img';
 import image44 from '../../image/image 44.jpg';
 
-const FacilityAccordion = ({ title, description, isOpen, onToggle, onClick }) => {
+const FacilityAccordion = ({ title, description, isOpen, onToggle }) => {
   return (
     <div className={`facility-accordion ${isOpen ? 'open' : ''}`}>
       <div className="accordion-header" onClick={onToggle}>
@@ -15,15 +15,6 @@ const FacilityAccordion = ({ title, description, isOpen, onToggle, onClick }) =>
       {isOpen && (
         <div className="accordion-content">
           <p>{description}</p>
-          <button 
-            className="facility-link-btn"
-            onClick={(e) => {
-              e.stopPropagation();
-              onClick();
-            }}
-          >
-            Learn More →
-          </button>
         </div>
       )}
     </div>
@@ -68,22 +59,11 @@ const FacilitiesPage = () => {
     });
   };
 
-  const handleFacilityClick = () => {
-    window.open('https://vinschool.edu.vn', '_blank');
-  };
-
-  const handleBannerClick = () => {
-    window.open('https://vinschool.edu.vn', '_blank');
-  };
-
   return (
     <div className="facilities-page">
       {/* Banner Image */}
-      <div className="facilities-banner" onClick={handleBannerClick}>
-        <Img src={image44} alt="iLab-SPC Laboratory" className="banner-image clickable" />
-        <div className="banner-overlay">
-          <span className="click-hint">Click to visit VinSchool</span>
-        </div>
+      <div className="facilities-banner">
+        <Img src={image44} alt="iLab-SPC Laboratory" className="banner-image" />
       </div>
       
       <div className="facilities-container">
@@ -111,7 +91,6 @@ const FacilitiesPage = () => {
               description={facility.description}
               isOpen={openAccordions.includes(index)}
               onToggle={() => handleAccordionToggle(index)}
-              onClick={handleFacilityClick}
             />
           ))}
         </div>

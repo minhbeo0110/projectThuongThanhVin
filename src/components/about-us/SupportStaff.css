@@ -55,6 +55,7 @@
   overflow: hidden; /* ensure shadow and radius wrap all content */
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 }
 
 .support-staff-card:hover {

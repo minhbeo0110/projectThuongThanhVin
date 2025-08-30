@@ -5,10 +5,11 @@ import image17 from '../../image/image 25.jpg';
 import image18 from '../../image/image 26.jpg';
 import image19 from '../../image/image 27.jpg';
 import image20 from '../../image/image 28.jpg';
+import { redirectTo } from '../common/utils';
 
-const SupportStaffCard = ({ image, name, affiliation, role }) => {
+const SupportStaffCard = ({ image, name, affiliation, role, onClick }) => {
   return (
-    <div className="support-staff-card">
+    <div className="support-staff-card" onClick={onClick}>
       <div className="staff-image">
         <Img src={image} alt={name} className="profile-image" />
       </div>
@@ -27,25 +28,29 @@ const SupportStaff = () => {
       image: image17,
       name: "Mai Anh Linh",
       affiliation: "Center for Environmental Intelligence",
-      role: "Project Manager"
+      role: "Project Manager",
+      profileLink: "https://aic.vinuni.edu.vn/vi/thanh-vien/"
     },
     {
       image: image18,
       name: "Nguyen Hoang Bao Tram",
       affiliation: "Center for Environmental Intelligence",
-      role: "Brand & Communication Manager"
+      role: "Brand & Communication Manager",
+      profileLink: "https://aic.vinuni.edu.vn/vi/thanh-vien/"
     },
     {
       image: image19,
       name: "Nguyen Thi Ha Giang",
       affiliation: "Center for Environmental Intelligence",
-      role: "Project Officer"
+      role: "Project Officer",
+      profileLink: "https://aic.vinuni.edu.vn/vi/thanh-vien/"
     },
     {
       image: image20,
       name: "Nguyen Thi Thoan",
       affiliation: "Center for Environmental Intelligence",
-      role: "Project Officer"
+      role: "Project Officer",
+      profileLink: "https://aic.vinuni.edu.vn/vi/thanh-vien/"
     }
   ];
 
@@ -63,6 +68,7 @@ const SupportStaff = () => {
               name={staff.name}
               affiliation={staff.affiliation}
               role={staff.role}
+              onClick={() => redirectTo(staff.profileLink, true)}
             />
           ))}
         </div>

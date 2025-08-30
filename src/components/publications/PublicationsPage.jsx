@@ -2,10 +2,12 @@ import React from 'react';
 import './PublicationsPage.css';
 import Img from '../common/Img';
 import { FaClock } from 'react-icons/fa';
+import { redirectTo } from '../common/utils';
 
 import image40 from '../../image/image 40.jpg';
 import image41 from '../../image/image 41.jpg';
 import image42 from '../../image/image 42.jpg';
+import Button from '../common/Button';
 
 const PublicationCard = ({ image, title, date, authors, journal, doi, onClick }) => {
   return (
@@ -28,9 +30,6 @@ const PublicationCard = ({ image, title, date, authors, journal, doi, onClick })
 };
 
 const PublicationsPage = () => {
-  const handleVinSchoolClick = () => {
-    window.open('https://vinschool.edu.vn', '_blank');
-  };
 
   const publications = [
     {
@@ -39,7 +38,8 @@ const PublicationsPage = () => {
       date: "2025/2/28",
       authors: "K. Sun, Y. Hamamoto, T. Hosokawa, M. Koshino, H. Isobe",
       journal: "Sci. Adv. 2025, 11, eadk8661",
-      doi: "10.1126/sciadv.adk8661"
+      doi: "10.1126/sciadv.adk8661",
+      link: "https://sgitolab.com/news/sciadvads1641"
     },
     {
       image: image41,
@@ -47,7 +47,8 @@ const PublicationsPage = () => {
       date: "2024/12/6",
       authors: "Y. Hamamoto, K. Sun, T. Hosokawa, M. Koshino, H. Isobe",
       journal: "Angew. Chem. Int. Ed. 2024, 63, e202412345",
-      doi: "10.1002/anie.202412345"
+      doi: "10.1002/anie.202412345",
+      link: "https://sgitolab.com/news/anie202416654"
     },
     {
       image: image42,
@@ -55,7 +56,8 @@ const PublicationsPage = () => {
       date: "2024/7/10",
       authors: "X. Zhang, Y. Hamamoto, K. Sun, H. Isobe",
       journal: "Nature Synth. 2024, 3, 456-467",
-      doi: "10.1038/s44160-024-00456-8"
+      doi: "10.1038/s44160-024-00456-8",
+      link: "https://sgitolab.com/news/s44160024005955"
     }
   ];
 
@@ -68,12 +70,16 @@ const PublicationsPage = () => {
             <PublicationCard 
               key={index} 
               {...pub} 
-              onClick={handleVinSchoolClick}
+              onClick={() => redirectTo(pub.link, true)}
             />
           ))}
         </div>
         <div className="view-all-section">
-          <a href="#" className="view-all-btn" onClick={(e) => { e.preventDefault(); handleVinSchoolClick(); }}>VIEW ALL PUBLICATIONS</a>
+          <Button
+            text="VIEW ALL PUBLICATIONS"
+            onClick={() => redirectTo('https://sgitolab.com/publications', true)}
+            className="view-all-btn"
+          />
         </div>
       </div>
     </div>

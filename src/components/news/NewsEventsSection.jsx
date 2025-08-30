@@ -2,6 +2,7 @@ import React from 'react';
 import './NewsEventsSection.css';
 import Img from '../common/Img';
 import Button from '../common/Button';
+import { redirectTo } from '../common/utils';
 import newsImage from '../../image/image 9.jpg';
 
 const NewsCard = ({ month, day, title, category, link, onClick }) => {
@@ -20,10 +21,6 @@ const NewsCard = ({ month, day, title, category, link, onClick }) => {
 };
 
 const NewsEventsSection = () => {
-  const handleVinSchoolClick = () => {
-    window.open('https://vinschool.edu.vn', '_blank');
-  };
-
   return (
     <section id="news" className="news-events-section">
       <div>
@@ -32,7 +29,7 @@ const NewsEventsSection = () => {
         <div className="news-content">
 
           <div className="left-column">
-            <div className="featured-image" onClick={handleVinSchoolClick}>
+            <div className="featured-image">
               <Img 
                 src={newsImage} 
                 alt="Memorandum of Understanding Signing Ceremony" 
@@ -46,7 +43,7 @@ const NewsEventsSection = () => {
               title="VinUni's CEI and UC Berkeley's CITRIS and the Banatao Institute Sign MOU to..."
               category="NEWS"
               link="/news/mou-signing"
-              onClick={handleVinSchoolClick}
+              onClick={() => redirectTo('https://cei.vinuni.edu.vn/vinuni-and-pecc2-forge-partnership-to-advance-innovation-in-sustainable-energy/', true)}
             />
           </div>
 
@@ -57,7 +54,7 @@ const NewsEventsSection = () => {
               title="Workshop: Capacity Building for Early Career Researchers"
               category="NEWS"
               link="/news/workshop-capacity-building"
-              onClick={handleVinSchoolClick}
+              onClick={() => redirectTo('https://cei.vinuni.edu.vn/event/workshop-capacity-building-for-early-career-researchers/', true)}
             />
             
             <NewsCard 
@@ -66,7 +63,7 @@ const NewsEventsSection = () => {
               title="HORIZONS2025 - Materials Innovation with AI & Automation"
               category="EVENTS"
               link="/events/horizons2025"
-              onClick={handleVinSchoolClick}
+              onClick={() => redirectTo('https://cei.vinuni.edu.vn/event/horizons2025-materials-innovation-with-ai-automation/', true)}
             />
             
             <NewsCard 
@@ -75,7 +72,7 @@ const NewsEventsSection = () => {
               title="COMOSA2025: The International Conference on Optimization, Modeling, Simulation, and..."
               category="EVENTS"
               link="/events/comosa2025"
-              onClick={handleVinSchoolClick}
+              onClick={() => redirectTo('https://cei.vinuni.edu.vn/event/comosa2025-the-international-conference-on-optimization-modeling-simulation-and-analytics/', true)}
             />
           </div>
         </div>
@@ -83,7 +80,7 @@ const NewsEventsSection = () => {
         <div style={{ textAlign: 'center', marginTop: '100px' }}>
           <Button 
             text="Read More" 
-            onClick={handleVinSchoolClick}
+            onClick={() => redirectTo('https://cei.vinuni.edu.vn/news-events/', true)}
             className="primary"
           />
         </div>

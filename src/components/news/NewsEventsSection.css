@@ -53,10 +53,12 @@
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  height: 120px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 25px;
 }
 
-.news-card-link:hover .news-card {
+.news-card:hover {
   box-shadow: 0 4px 20px rgba(0,0,0,0.15);
   background-color: #ecebeb;
 }
@@ -69,22 +71,37 @@
   justify-content: center;
   background: #c54334;
   color: white;
-  width: 10%;
+  min-width: 15%;
+  min-height: 100%;
+  position: relative;
 }
 
 .date-box .month {
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 500;
   font-family: 'Times New Roman', Times, serif;
   text-transform: uppercase;
+  line-height: 1;
 }
 
 .date-box .day {
-  margin-top: 10px;
+  margin-top: 20px;
   font-size: 2rem;
   font-weight: bold;
   font-family: 'Times New Roman', Times, serif;
   line-height: 1;
+}
+
+/* Dấu gạch ngang giữa tháng và ngày */
+.date-box::after {
+  content: '';
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
 .news-content {
@@ -119,6 +136,12 @@
   font-weight: 500;
 }
 
+/* Read More Section */
+.read-more-section {
+  text-align: center;
+  margin-top: 50px;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .section-title {
@@ -133,14 +156,21 @@
   
   .news-card {
     padding: 15px;
+    height: 100px;
   }
   
   .date-box {
     width: 50px;
     height: 50px;
+    min-width: 50px;
+    min-height: 50px;
   }
   
   .date-box .day {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+  }
+  
+  .date-box .month {
+    font-size: 0.7rem;
   }
 }

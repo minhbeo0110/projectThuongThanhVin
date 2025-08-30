@@ -101,7 +101,7 @@
 
 /* Active State - White underline */
 .nav-item.active a {
-  background: #b2dfdb; /* Slightly darker teal for active */
+  /* background: #cdeeec; */
   color: #000000;
   position: relative;
   font-weight: 600;
@@ -233,7 +233,7 @@
 }
 
 .dropdown-item a:hover {
-  background: #e9ecef;
+  background: #f8f8e5;
   font-weight: 600;
 }
 

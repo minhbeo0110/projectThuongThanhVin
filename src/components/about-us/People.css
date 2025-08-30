@@ -45,6 +45,7 @@
   display: flex;
   flex-direction: column;
   gap: 0;
+  cursor: pointer;
 }
 
 .person-card {
@@ -60,7 +61,7 @@
 }
 
 .person-card:hover {
-  background-color: #f8f9fa;
+  background-color: #e1e2e3;
 }
 
 .person-image {
