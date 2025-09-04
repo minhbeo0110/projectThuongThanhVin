@@ -23,8 +23,8 @@ const NewsCard = ({ month, day, title, category, link, onClick }) => {
 const NewsEventsSection = () => {
   return (
     <section id="news" className="news-events-section">
-      <div>
-        <span className="section-news-events-title">News and Eventssss</span>
+      <div className="news-events-container">
+        <span className="section-news-events-title">News and Events</span>
         
         <div className="news-content">
 
@@ -77,7 +77,7 @@ const NewsEventsSection = () => {
           </div>
         </div>
         
-        <div style={{ textAlign: 'center', marginTop: '100px' }}>
+        <div style={{ textAlign: 'center', marginTop: '20px', marginBottom: '60px' }}>
           <Button 
             text="Read More" 
             onClick={() => redirectTo('https://cei.vinuni.edu.vn/news-events/', true)}

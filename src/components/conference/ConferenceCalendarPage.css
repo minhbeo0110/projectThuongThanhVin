@@ -1,0 +1,232 @@
+.conference-calendar-page {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  padding: 40px 0;
+}
+
+.conference-container {
+  width: 100%;
+  margin: 0;
+  padding: 0 20px;
+}
+
+.conference-page-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #c71f1f;
+  margin-bottom: 50px;
+  position: relative;
+  display: inline-block;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.conference-page-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: #c71f1f;
+  border-radius: 2px;
+}
+
+.conference-layout {
+  display: flex;
+  gap: 30px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Sidebar */
+.year-sidebar {
+  width: 200px;
+  background: #f8f9fa;
+  padding: 30px 20px;
+  border-right: 1px solid #e0e0e0;
+}
+
+.year-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.year-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.year-item {
+  padding: 12px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  text-align: center;
+  color: #666;
+  border: 2px solid transparent;
+}
+
+.year-item:hover {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.year-item.active {
+  background-color: #1976d2;
+  color: white;
+  border-color: #1976d2;
+}
+
+/* Main Content */
+.conference-content {
+  flex: 1;
+  padding: 30px;
+}
+
+.conference-table-container {
+  overflow-x: auto;
+}
+
+.conference-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.conference-table thead {
+  background-color: #1976d2;
+  color: white;
+}
+
+.conference-table th {
+  padding: 16px 12px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.index-col {
+  width: 60px;
+  text-align: center;
+}
+
+.time-col {
+  width: 200px;
+}
+
+.conference-col {
+  width: auto;
+}
+
+.conference-table tbody tr {
+  border-bottom: 1px solid #e0e0e0;
+  transition: background-color 0.2s ease;
+}
+
+.conference-table tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.conference-table tbody tr:hover {
+  background-color: #e3f2fd;
+  cursor: pointer;
+}
+
+.conference-table td {
+  padding: 16px 12px;
+  vertical-align: top;
+}
+
+.index-cell {
+  text-align: center;
+  font-weight: 500;
+  color: #666;
+}
+
+.time-cell {
+  font-weight: 500;
+  color: #333;
+}
+
+.conference-cell {
+  color: #1976d2;
+}
+
+.conference-name {
+  font-weight: 500;
+  line-height: 1.4;
+  display: block;
+}
+
+.conference-name:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .conference-layout {
+    flex-direction: column;
+  }
+  
+  .year-sidebar {
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .year-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .year-item {
+    min-width: 80px;
+  }
+  
+  .conference-content {
+    padding: 20px;
+  }
+  
+  .conference-table {
+    font-size: 12px;
+  }
+  
+  .conference-table th,
+  .conference-table td {
+    padding: 12px 8px;
+  }
+  
+  .time-col {
+    width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .conference-container {
+    padding: 0 10px;
+  }
+  
+  .page-title {
+    font-size: 2rem;
+  }
+  
+  .conference-table {
+    font-size: 11px;
+  }
+  
+  .conference-table th,
+  .conference-table td {
+    padding: 8px 6px;
+  }
+  
+  .time-col {
+    width: 120px;
+  }
+}

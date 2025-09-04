@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { useState, useMemo } from 'react';
 import './PublicationsPage.css';
 import Img from '../common/Img';
 import { FaClock } from 'react-icons/fa';
 import { redirectTo } from '../common/utils';
+import Button from '../common/Button';
 
 import image40 from '../../image/image 40.jpg';
 import image41 from '../../image/image 41.jpg';
 import image42 from '../../image/image 42.jpg';
-import Button from '../common/Button';
 
 const PublicationCard = ({ image, title, date, authors, journal, doi, onClick }) => {
   return (
@@ -30,7 +30,6 @@ const PublicationCard = ({ image, title, date, authors, journal, doi, onClick })
 };
 
 const PublicationsPage = () => {
-
   const publications = [
     {
       image: image40,
@@ -61,12 +60,53 @@ const PublicationsPage = () => {
     }
   ];
 
+  const [searchTerm, setSearchTerm] = useState("");
+  const [yearFilter, setYearFilter] = useState("");
+
+  // Lấy danh sách năm từ dữ liệu
+  const years = useMemo(() => {
+    const yearSet = new Set(publications.map(pub => pub.date.split("/")[0]));
+    return Array.from(yearSet).sort((a, b) => b - a);
+  }, [publications]);
+
+  // Lọc theo search + năm
+  const filteredPublications = publications.filter(pub => {
+    const matchesSearch = pub.title.toLowerCase().includes(searchTerm.toLowerCase());
+    const pubYear = pub.date.split("/")[0];
+    const matchesYear = yearFilter ? pubYear === yearFilter : true;
+    return matchesSearch && matchesYear;
+  });
+
   return (
     <div className="publications-page">
       <div className="publications-container">
-        <span className="publications-title">PUBLICATIONS</span>
+        {/* Header với search + filter */}
+        <div className="publications-header">
+          <span className="publications-title">PUBLICATIONS</span>
+          <div className="filters">
+            <input
+              type="text"
+              placeholder="Search by title..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="search-input"
+            />
+            <select
+              value={yearFilter}
+              onChange={(e) => setYearFilter(e.target.value)}
+              className="year-select"
+            >
+              <option value="">All Years</option>
+              {years.map((year, idx) => (
+                <option key={idx} value={year}>{year}</option>
+              ))}
+            </select>
+          </div>
+        </div>
+
+        {/* List publications */}
         <div className="publications-grid">
-          {publications.map((pub, index) => (
+          {filteredPublications.map((pub, index) => (
             <PublicationCard 
               key={index} 
               {...pub} 
@@ -74,6 +114,7 @@ const PublicationsPage = () => {
             />
           ))}
         </div>
+
         <div className="view-all-section">
           <Button
             text="VIEW ALL PUBLICATIONS"

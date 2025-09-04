@@ -17,26 +17,7 @@ const AboutUs = () => {
               ilab - SPC ( interuniversity lab of Synthesis, Pharmaceutical and Computational Science) is the collaborations between
             </p>
             <div className="dots-line">
-              <span>.</span>
-              <span>.</span>
-              <span>.</span>
-              <span>.</span>
-              <span>.</span>
-              <span>.</span>
-              <span>.</span>
-              <span>.</span>
-              <span>.</span>
-              <span>.</span>
-              <span>.</span>
-              <span>.</span>
-              <span>.</span>
-              <span>.</span>
-              <span>.</span>
-              <span>.</span>
-              <span>.</span>
-              <span>.</span>
-              <span>.</span>
-              <span>.</span>
+              <span>.................</span>
             </div>
           </div>
         </div>

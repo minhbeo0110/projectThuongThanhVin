@@ -15,6 +15,7 @@ const Header = () => {
     if (location.pathname === '/news&events') return 'news';
     if (location.pathname === '/publications') return 'publications';
     if (location.pathname === '/facilities') return 'facilities';
+    if (location.pathname === '/conference-calendar') return 'conference';
     return 'home';
   });
 
@@ -49,6 +50,12 @@ const Header = () => {
     if (item === 'facilities') {
       // Navigate to facilities page
       navigate('/facilities');
+      return;
+    }
+
+    if (item === 'conference') {
+      // Navigate to conference calendar page
+      navigate('/conference-calendar');
       return;
     }
     
@@ -164,6 +171,14 @@ const Header = () => {
               onClick={(e) => handleNavClick('facilities', e)}
             >
               Facilities
+            </a>
+          </li>
+          <li className={`nav-item ${activeItem === 'conference' ? 'active' : ''}`}>
+            <a 
+              href="#conference-calendar" 
+              onClick={(e) => handleNavClick('conference', e)}
+            >
+              Conference Calendar
             </a>
           </li>
         </ul>

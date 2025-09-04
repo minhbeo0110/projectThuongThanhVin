@@ -13,7 +13,8 @@
     color: #000000;
     font-family: 'Poppins Bold', 'Helvetica Bold', sans-serif;
     font-weight: bold;
-    text-align: left;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .research-cards-grid {

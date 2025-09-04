@@ -1,23 +1,24 @@
-.news-events-section {
-  padding: 80px 0;
-  background: white;
+.news-events-container {
+  text-align: center;
 }
 
 .section-news-events-title {
-  text-align: left;
   font-size: 1.5rem;
   font-weight: bold;
   color: #333;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
+  margin-top: 60px;
   position: relative;
   display: inline-block;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .section-news-events-title::after {
   content: '';
   position: absolute;
   bottom: -8px;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 60px;
   height: 3px;
   background-color: #c71f1f;

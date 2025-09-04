@@ -15,8 +15,6 @@
   padding: 20px 20px;
   padding-bottom: 40px;
   text-align: left;
-  /* position: relative;
-  overflow: hidden; */
 }
 
 .about-us-title {
@@ -27,6 +25,7 @@
   line-height: 1.2;
   font-weight: bold;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  text-align: center;
 }
 
 .about-us-description {
