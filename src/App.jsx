@@ -7,6 +7,7 @@ import NewsEventsPage from './pages/NewsEventsPage';
 import PublicationsPageWrapper from './pages/PublicationsPage';
 import FacilitiesPageWrapper from './pages/FacilitiesPage';
 import ConferenceCalendarPageWrapper from './pages/ConferenceCalendarPage';
+import ItemDetailPage from './pages/ItemDetailPage';
 import './App.css';
 
 function App() {
@@ -42,6 +43,11 @@ function App() {
           <Route path="/conference-calendar" element={
             <LayoutCommon>
               <ConferenceCalendarPageWrapper />
+            </LayoutCommon>
+          } />
+          <Route path="/item-detail" element={
+            <LayoutCommon>
+              <ItemDetailPage />
             </LayoutCommon>
           } />
         </Routes>

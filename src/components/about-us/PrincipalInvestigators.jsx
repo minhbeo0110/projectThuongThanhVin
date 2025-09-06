@@ -1,11 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './PrincipalInvestigators.css';
 import Img from '../common/Img';
 import image21 from '../../image/image 21.jpg';
 import image22 from '../../image/image 22.jpg';
 import image23 from '../../image/image 23.jpg';
 import image24 from '../../image/image 24.jpg';
-import { redirectTo } from '../common/utils';
 
 const PrincipalInvestigatorCard = ({ image, name, title, affiliation, project, onClick }) => {
   return (
@@ -24,6 +24,12 @@ const PrincipalInvestigatorCard = ({ image, name, title, affiliation, project, o
 };
 
 const PrincipalInvestigators = () => {
+  const navigate = useNavigate();
+
+  const handleItemClick = (item) => {
+    navigate('/item-detail', { state: { item, activeTab: 'about' } });
+  };
+
   const principalInvestigators = [
     {
       image: image21,
@@ -31,7 +37,12 @@ const PrincipalInvestigators = () => {
       title: "Assistant Professor, Mechanical Engineering program",
       affiliation: "College of Engineering and Computer Science",
       project: "Project: AI for Materials",
-      profileLink: "https://vinuni.edu.vn/vi/people/nguyen-dang-tung/"
+      item: {
+        title: "Nguyen Dang Tung, PhD",
+        category: "ABOUT_US",
+        content: "Nguyen Dang Tung, PhD - Assistant Professor in Mechanical Engineering program at College of Engineering and Computer Science. Leading the AI for Materials project, focusing on artificial intelligence applications in materials science and engineering.",
+        image: image21
+      }
     },
     {
       image: image22,
@@ -39,7 +50,12 @@ const PrincipalInvestigators = () => {
       title: "Associate Professor, Electrical Engineering program",
       affiliation: "College of Engineering and Computer Science",
       project: "Project: Carbon Stock",
-      profileLink: "https://vinuni.edu.vn/people/nidal-kamel-phd-2/"
+      item: {
+        title: "Nidal Kamel, PhD.",
+        category: "ABOUT_US",
+        content: "Nidal Kamel, PhD. - Associate Professor in Electrical Engineering program at College of Engineering and Computer Science. Leading the Carbon Stock project, focusing on carbon monitoring and environmental assessment technologies.",
+        image: image22
+      }
     },
     {
       image: image23,
@@ -47,7 +63,12 @@ const PrincipalInvestigators = () => {
       title: "Assistant Professor, Electrical Engineering program",
       affiliation: "College of Engineering and Computer Science",
       project: "Project: Advancing",
-      profileLink: "https://vinuni.edu.vn/vi/people/ts-do-danh-cuong/"
+      item: {
+        title: "Do Danh Cuong, PhD.",
+        category: "ABOUT_US",
+        content: "Do Danh Cuong, PhD. - Assistant Professor in Electrical Engineering program at College of Engineering and Computer Science. Leading the Advancing project, focusing on innovative electrical engineering solutions and technological advancement.",
+        image: image23
+      }
     },
     {
       image: image24,
@@ -55,7 +76,12 @@ const PrincipalInvestigators = () => {
       title: "Associate Professor, Mathematics",
       affiliation: "College of Engineering and Computer Science",
       project: "Project: Digital Twin",
-      profileLink: "https://vinuni.edu.vn/vi/people/nguyen-ngoc-doanh-2/"
+      item: {
+        title: "Nguyen Ngoc Doanh, PhD",
+        category: "ABOUT_US",
+        content: "Nguyen Ngoc Doanh, PhD - Associate Professor in Mathematics at College of Engineering and Computer Science. Leading the Digital Twin project, focusing on mathematical modeling and digital twin technologies for complex systems.",
+        image: image24
+      }
     }
   ];
 
@@ -74,7 +100,7 @@ const PrincipalInvestigators = () => {
               title={investigator.title}
               affiliation={investigator.affiliation}
               project={investigator.project}
-              onClick={() => redirectTo(investigator.profileLink, true)}
+              onClick={() => handleItemClick(investigator.item)}
             />
           ))}
         </div>

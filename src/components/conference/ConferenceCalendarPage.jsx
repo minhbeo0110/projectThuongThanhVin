@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './ConferenceCalendarPage.css';
-import { redirectTo } from '../common/utils';
 
 const ConferenceCalendarPage = () => {
   const [selectedYear, setSelectedYear] = useState('2026');
@@ -186,7 +185,7 @@ const ConferenceCalendarPage = () => {
   const filteredConferences = conferences.filter(conf => conf.year.toString() === selectedYear);
 
   const handleConferenceClick = (link) => {
-    redirectTo(link, true);
+    // Disabled - no action
   };
 
   return (

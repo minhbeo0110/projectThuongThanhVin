@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './PublicationsPage.css';
 import Img from '../common/Img';
 import { FaClock } from 'react-icons/fa';
@@ -30,6 +31,12 @@ const PublicationCard = ({ image, title, date, authors, journal, doi, onClick })
 };
 
 const PublicationsPage = () => {
+  const navigate = useNavigate();
+
+  const handleItemClick = (item) => {
+    navigate('/item-detail', { state: { item, activeTab: 'publications' } });
+  };
+
   const publications = [
     {
       image: image40,
@@ -38,7 +45,12 @@ const PublicationsPage = () => {
       authors: "K. Sun, Y. Hamamoto, T. Hosokawa, M. Koshino, H. Isobe",
       journal: "Sci. Adv. 2025, 11, eadk8661",
       doi: "10.1126/sciadv.adk8661",
-      link: "https://sgitolab.com/news/sciadvads1641"
+      item: {
+        title: "On-Surface Synthesis of Azacorannulene: A Nitrogen-Doped Buckybowl",
+        category: "PUBLICATIONS",
+        content: "On-Surface Synthesis of Azacorannulene: A Nitrogen-Doped Buckybowl. Published in Science Advances, this research presents a novel approach to synthesizing nitrogen-doped buckybowl structures on surfaces, advancing our understanding of carbon-based nanomaterials.",
+        image: image40
+      }
     },
     {
       image: image41,
@@ -47,7 +59,12 @@ const PublicationsPage = () => {
       authors: "Y. Hamamoto, K. Sun, T. Hosokawa, M. Koshino, H. Isobe",
       journal: "Angew. Chem. Int. Ed. 2024, 63, e202412345",
       doi: "10.1002/anie.202412345",
-      link: "https://sgitolab.com/news/anie202416654"
+      item: {
+        title: "Azadihomocorannulene: A Nitrogen-Doped Buckybowl with a Homocorannulene Framework",
+        category: "PUBLICATIONS",
+        content: "Azadihomocorannulene: A Nitrogen-Doped Buckybowl with a Homocorannulene Framework. Published in Angewandte Chemie International Edition, this work demonstrates the synthesis and characterization of novel nitrogen-doped buckybowl structures with unique electronic properties.",
+        image: image41
+      }
     },
     {
       image: image42,
@@ -56,7 +73,12 @@ const PublicationsPage = () => {
       authors: "X. Zhang, Y. Hamamoto, K. Sun, H. Isobe",
       journal: "Nature Synth. 2024, 3, 456-467",
       doi: "10.1038/s44160-024-00456-8",
-      link: "https://sgitolab.com/news/s44160024005955"
+      item: {
+        title: "Synthesis of Azahexabenzocoronenium: A Nitrogen-Doped Hexabenzocoronenium",
+        category: "PUBLICATIONS",
+        content: "Synthesis of Azahexabenzocoronenium: A Nitrogen-Doped Hexabenzocoronenium. Published in Nature Synthesis, this research presents a breakthrough in the synthesis of nitrogen-doped polycyclic aromatic hydrocarbons with potential applications in organic electronics.",
+        image: image42
+      }
     }
   ];
 
@@ -110,7 +132,7 @@ const PublicationsPage = () => {
             <PublicationCard 
               key={index} 
               {...pub} 
-              onClick={() => redirectTo(pub.link, true)}
+              onClick={() => handleItemClick(pub.item)}
             />
           ))}
         </div>

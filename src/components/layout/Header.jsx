@@ -11,12 +11,27 @@ const Header = () => {
   const location = useLocation();
   const [activeItem, setActiveItem] = useState(() => {
     // Set active item based on current route
-    if (location.pathname === '/about-us') return 'about';
-    if (location.pathname === '/news&events') return 'news';
-    if (location.pathname === '/publications') return 'publications';
-    if (location.pathname === '/facilities') return 'facilities';
-    if (location.pathname === '/conference-calendar') return 'conference';
-    return 'home';
+    const pathToTab = {
+      '/about-us': 'about',
+      '/news&events': 'news', 
+      '/publications': 'publications',
+      '/facilities': 'facilities',
+      '/conference-calendar': 'conference'
+    };
+    
+    if (location.pathname === '/item-detail') {
+      const categoryToTab = {
+        'ABOUT_US': 'about',
+        'NEWS': 'news',
+        'EVENTS': 'news', 
+        'PUBLICATIONS': 'publications',
+        'FACILITIES': 'facilities',
+        'CONFERENCE': 'conference'
+      };
+      return categoryToTab[location.state?.item?.category] || 'home';
+    }
+    
+    return pathToTab[location.pathname] || 'home';
   });
 
   const handleNavClick = (item, event) => {

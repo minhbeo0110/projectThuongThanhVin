@@ -2,7 +2,6 @@ import React from 'react';
 import './EventsPage.css';
 import Img from '../common/Img';
 import Button from '../common/Button';
-import { redirectTo } from '../common/utils';
 
 import image34 from '../../image/image 34.jpg';
 import image35 from '../../image/image 35.jpg';
@@ -87,18 +86,11 @@ const EventsPage = () => {
               title={event.title}
               dateMonth={event.dateMonth}
               dateDay={event.dateDay}
-              onClick={() => redirectTo(event.link, true)}
+              onClick={() => {}}
             />
           ))}
         </div>
 
-        <div className="view-all-section">
-          <Button
-            text="VIEW ALL EVENTS"
-            onClick={() => redirectTo('https://vinschool.edu.vn', true)}
-            className="view-all-btn"
-          />
-        </div>
       </div>
     </div>
   );

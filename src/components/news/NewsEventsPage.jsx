@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './NewsEventsPage.css';
 import Img from '../common/Img';
 import Button from '../common/Button';
-import { redirectTo } from '../common/utils';
 
 import image29 from '../../image/image 29.jpg';
 import image30 from '../../image/image 30.jpg';
@@ -83,6 +83,12 @@ const CardList = ({
 
 /* ----------------- MAIN PAGE ----------------- */
 const NewsEventsPage = () => {
+  const navigate = useNavigate();
+
+  const handleItemClick = (item) => {
+    navigate('/item-detail', { state: { item, activeTab: 'news' } });
+  };
+
   const newsData = [
     {
       image: image31,
@@ -90,7 +96,12 @@ const NewsEventsPage = () => {
       dateMonth: "Dec",
       dateDay: "31",
       category: "News",
-      link: "https://cei.vinuni.edu.vn/cei-soft-launch-a-first-glance-at-our-new-home/"
+      item: {
+        title: "CEI Soft Launch: A First Glance at Our New Home",
+        category: "NEWS",
+        content: "The Center for Environmental Intelligence (CEI) officially launched its new facilities, marking a significant milestone in our research capabilities. The new space provides state-of-the-art equipment and collaborative environments for cutting-edge environmental research.",
+        image: image31
+      }
     },
     {
       image: image32,
@@ -98,7 +109,12 @@ const NewsEventsPage = () => {
       dateMonth: "Nov",
       dateDay: "01",
       category: "News, Latest News",
-      link: "https://cei.vinuni.edu.vn/vinuni-and-pecc2-forge-partnership-to-advance-innovation-in-sustainable-energy/"
+      item: {
+        title: "VinUni and PECC2 Forge Partnership to Advance Innovation in Sustainable Energy",
+        category: "NEWS",
+        content: "VinUniversity and PECC2 have established a strategic partnership to advance innovation in sustainable energy solutions. This collaboration will focus on research and development of renewable energy technologies.",
+        image: image32
+      }
     },
     {
       image: image33,
@@ -106,7 +122,12 @@ const NewsEventsPage = () => {
       dateMonth: "Oct",
       dateDay: "23",
       category: "News",
-      link: "https://cei.vinuni.edu.vn/franconomics-2024-a-high-level-forum-on-renewable-energy-cooperation-between-france-and-vietnam/"
+      item: {
+        title: "Franconomics 2024: A High-Level Forum on Renewable Energy Cooperation Between France and Vietnam",
+        category: "NEWS",
+        content: "Franconomics 2024: A High-Level Forum on Renewable Energy Cooperation Between France and Vietnam. A strategic dialogue fostering international collaboration in sustainable energy solutions and environmental innovation.",
+        image: image33
+      }
     },
     {
       image: image29,
@@ -114,7 +135,12 @@ const NewsEventsPage = () => {
       dateMonth: "Sep",
       dateDay: "12",
       category: "News",
-      link: "https://cei.vinuni.edu.vn/research-symposium-sustainable-chemistry/"
+      item: {
+        title: "Research Symposium: Sustainable Chemistry and Green Technology",
+        category: "NEWS",
+        content: "Research Symposium: Sustainable Chemistry and Green Technology. An academic gathering focused on advancing sustainable chemical processes and environmentally friendly technologies for a greener future.",
+        image: image29
+      }
     },
     {
       image: image30,
@@ -122,7 +148,12 @@ const NewsEventsPage = () => {
       dateMonth: "Oct",
       dateDay: "03",
       category: "News",
-      link: "https://cei.vinuni.edu.vn/international-workshop-computational-drug-discovery/"
+      item: {
+        title: "International Workshop on Computational Drug Discovery",
+        category: "NEWS",
+        content: "International Workshop on Computational Drug Discovery. A specialized workshop bringing together researchers in computational methods for drug discovery and pharmaceutical research to advance medical science.",
+        image: image30
+      }
     },
     {
       image: image34,
@@ -130,7 +161,12 @@ const NewsEventsPage = () => {
       dateMonth: "Nov",
       dateDay: "18",
       category: "News",
-      link: "https://cei.vinuni.edu.vn/annual-research-showcase-ilab-spc-achievements/"
+      item: {
+        title: "Annual Research Showcase: iLab-SPC Achievements",
+        category: "NEWS",
+        content: "Annual Research Showcase: iLab-SPC Achievements. A comprehensive presentation of the year's research accomplishments and innovations from the iLab-SPC research center.",
+        image: image34
+      }
     }
   ];
 
@@ -140,63 +176,108 @@ const NewsEventsPage = () => {
       title: "Workshop: Capacity Building for Early Career Researchers",
       dateMonth: "Aug",
       dateDay: "26",
-      link: "https://cei.vinuni.edu.vn/event/workshop-capacity-building-for-early-career-researchers/"
+      item: {
+        title: "Workshop: Capacity Building for Early Career Researchers",
+        category: "EVENTS",
+        content: "A comprehensive workshop designed to support early career researchers in developing essential skills and knowledge for successful academic and research careers.",
+        image: image34
+      }
     },
     {
       image: image35,
       title: "HORIZONS2025 - Materials Innovation with AI & Automation",
       dateMonth: "Aug",
       dateDay: "25",
-      link: "https://cei.vinuni.edu.vn/event/horizons2025-materials-innovation-with-ai-automation/"
+      item: {
+        title: "HORIZONS2025 - Materials Innovation with AI & Automation",
+        category: "EVENTS",
+        content: "HORIZONS 2025: MATERIALS, AI & AUTOMATION - August 25-27, 2025, VinUniversity, Hanoi, Vietnam. Topics include AI-driven Materials Discovery and Design, Green Materials Synthesis, Materials for Energy and Environmental Solutions, Materials for Life Sciences and Health Innovations, Additive Manufacturing and 3D Printing.",
+        image: image35
+      }
     },
     {
       image: image36,
       title: "COMOSA2025: The International Conference on Optimization, Modeling, Simulation, and...",
       dateMonth: "Aug",
       dateDay: "15",
-      link: "https://cei.vinuni.edu.vn/event/comosa2025-the-international-conference-on-optimization-modeling-simulation-and-analytics/"
+      item: {
+        title: "COMOSA2025: The International Conference on Optimization, Modeling, Simulation, and...",
+        category: "EVENTS",
+        content: "COMOSA 2025 - THE INTERNATIONAL CONFERENCE ON OPTIMIZATION, MODELING, SIMULATION, AND ANALYTICS. A premier conference bringing together researchers and practitioners in optimization and modeling.",
+        image: image36
+      }
     },
     {
       image: image37,
       title: "THE EXPLORERS CLUB - Smart Air, Smart Cities: Digital Solutions for...",
       dateMonth: "Jun",
       dateDay: "25",
-      link: "https://cei.vinuni.edu.vn/event/the-explorers-club-smart-air-smart-cities/"
+      item: {
+        title: "THE EXPLORERS CLUB - Smart Air, Smart Cities: Digital Solutions for...",
+        category: "EVENTS",
+        content: "THE EXPLORERS CLUB - Smart Air, Smart Cities: Digital Solutions for Urban Environmental Challenges. An innovative platform bringing together experts in smart city technologies and environmental solutions.",
+        image: image37
+      }
     },
     {
       image: image38,
       title: "AIRPACT VIETNAM 2025: Smart Air, Smart Cities: Digital Solutions for...",
       dateMonth: "Jun",
       dateDay: "26",
-      link: "https://cei.vinuni.edu.vn/event/airpact-vietnam-2025-smart-air-smart-cities/"
+      item: {
+        title: "AIRPACT VIETNAM 2025: Smart Air, Smart Cities: Digital Solutions for...",
+        category: "EVENTS",
+        content: "AIRPACT VIETNAM 2025: Smart Air, Smart Cities: Digital Solutions for Environmental Monitoring and Management. A comprehensive program focusing on air quality and smart city technologies.",
+        image: image38
+      }
     },
     {
       image: image39,
       title: "Opening Ceremony - Center for Environmental Intelligence (CEI) Office",
       dateMonth: "Mar",
       dateDay: "13",
-      link: "https://cei.vinuni.edu.vn/event/opening-ceremony-center-for-environmental-intelligence-cei-office/"
+      item: {
+        title: "Opening Ceremony - Center for Environmental Intelligence (CEI) Office",
+        category: "EVENTS",
+        content: "Opening Ceremony - Center for Environmental Intelligence (CEI) Office. A milestone event marking the official launch of the CEI research center and its commitment to environmental intelligence research.",
+        image: image39
+      }
     },
     {
       image: image29,
       title: "Industry Partnership Forum: Bridging Academia and Industry",
       dateMonth: "Dec",
       dateDay: "05",
-      link: "https://cei.vinuni.edu.vn/event/industry-partnership-forum/"
+      item: {
+        title: "Industry Partnership Forum: Bridging Academia and Industry",
+        category: "EVENTS",
+        content: "Industry Partnership Forum: Bridging Academia and Industry. A strategic platform connecting academic research with industry needs to drive innovation and practical applications.",
+        image: image29
+      }
     },
     {
       image: image30,
       title: "Research Symposium: Sustainable Chemistry and Green Technology",
       dateMonth: "Sep",
       dateDay: "12",
-      link: "https://cei.vinuni.edu.vn/event/research-symposium-sustainable-chemistry/"
+      item: {
+        title: "Research Symposium: Sustainable Chemistry and Green Technology",
+        category: "EVENTS",
+        content: "Research Symposium: Sustainable Chemistry and Green Technology. An academic gathering focused on advancing sustainable chemical processes and environmentally friendly technologies.",
+        image: image30
+      }
     },
     {
       image: image31,
       title: "International Workshop on Computational Drug Discovery",
       dateMonth: "Oct",
       dateDay: "03",
-      link: "https://cei.vinuni.edu.vn/event/international-workshop-computational-drug-discovery/"
+      item: {
+        title: "International Workshop on Computational Drug Discovery",
+        category: "EVENTS",
+        content: "International Workshop on Computational Drug Discovery. A specialized workshop bringing together researchers in computational methods for drug discovery and pharmaceutical research.",
+        image: image31
+      }
     }
   ];
 
@@ -213,12 +294,12 @@ const NewsEventsPage = () => {
           {/* Featured Article */}
           <div
             className="featured-article"
-            onClick={() =>
-              redirectTo(
-                'https://cei.vinuni.edu.vn/vinunis-cei-and-uc-berkeleys-citris-sign-mou-to-accelerate-smart-city-innovation-and-sustainability-in-vietnam/',
-                true
-              )
-            }
+            onClick={() => handleItemClick({
+              title: "VinUni's CEI and UC Berkeley's CITRIS and the Banatao Institute Sign MOU to Establish the Center for Environmental Intelligence (CEI)",
+              category: "NEWS",
+              content: "VinUniversity's Center for Environmental Intelligence (CEI) has signed a Memorandum of Understanding (MOU) with UC Berkeley's Center for Information Technology Research in the Interest of Society (CITRIS) and the Banatao Institute to establish the Center for Environmental Intelligence.",
+              image: image29
+            })}
           >
             <Img src={image29} alt="Featured Article" className="featured-img" />
             <div className="featured-overlay">
@@ -231,10 +312,12 @@ const NewsEventsPage = () => {
                 className="featured-readmore"
                 onClick={(e) => {
                   e.preventDefault();
-                  redirectTo(
-                    'https://cei.vinuni.edu.vn/vinunis-cei-and-uc-berkeleys-citris-sign-mou-to-accelerate-smart-city-innovation-and-sustainability-in-vietnam/',
-                    true
-                  );
+                  handleItemClick({
+                    title: "VinUni's CEI and UC Berkeley's CITRIS and the Banatao Institute Sign MOU to Establish the Center for Environmental Intelligence (CEI)",
+                    category: "NEWS",
+                    content: "VinUniversity's Center for Environmental Intelligence (CEI) has signed a Memorandum of Understanding (MOU) with UC Berkeley's Center for Information Technology Research in the Interest of Society (CITRIS) and the Banatao Institute to establish the Center for Environmental Intelligence.",
+                    image: image29
+                  });
                 }}
               >
                 Read more →
@@ -245,12 +328,12 @@ const NewsEventsPage = () => {
           {/* Call for Proposal */}
           <div
             className="page-news-card"
-            onClick={() =>
-              redirectTo(
-                'https://cei.vinuni.edu.vn/call-for-proposal-cei-envision-grant-2025/',
-                true
-              )
-            }
+            onClick={() => handleItemClick({
+              title: "Call for Proposal: Research Collaboration Opportunities",
+              category: "NEWS",
+              content: "Call for Proposal: Research Collaboration Opportunities. CEI Envision Grant 2025 - Supporting innovative research projects in environmental intelligence and sustainable technologies through strategic partnerships and funding opportunities.",
+              image: image30
+            })}
           >
             <div className="page-news-card-image">
               <Img src={image30} alt="Call for Proposal" />
@@ -277,7 +360,7 @@ const NewsEventsPage = () => {
             <NewsCard
               key={index}
               {...news}
-              onClick={() => redirectTo(news.link, true)}
+              onClick={() => handleItemClick(news.item)}
             />
           )}
           showAll={showAllNews}
@@ -294,7 +377,7 @@ const NewsEventsPage = () => {
             <EventCard
               key={index}
               {...event}
-              onClick={() => redirectTo(event.link, true)}
+              onClick={() => handleItemClick(event.item)}
             />
           )}
           showAll={showAllEvents}
