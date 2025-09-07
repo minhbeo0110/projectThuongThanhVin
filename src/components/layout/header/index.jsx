@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import './Header.css';
-import Img from '../common/Img';
-import vinuniLogo from '../../image/image 4.jpg';
-import ceiLogo from '../../image/image 5.jpg';
-import { scrollToSection } from '../common/SmoothScroll';
+import './stylesheet.css';
+import Img from '../../common/img';
+import vinuniLogo from '../../../image/image 4.jpg';
+import ceiLogo from '../../../image/image 5.jpg';
+import { scrollToSection } from '../../common/utils';
 
 const Header = () => {
   const navigate = useNavigate();

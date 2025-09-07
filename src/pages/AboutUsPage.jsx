@@ -1,6 +1,6 @@
 import React from 'react';
-import AboutUs from '../components/about-us/AboutUs';
-import Img from '../components/common/Img';
+import AboutUs from '../components/about-us/intro';
+import Img from '../components/common/img';
 import homeImage from '../image/image 6.jpg';
 
 const AboutUsPage = () => {

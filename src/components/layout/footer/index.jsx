@@ -1,5 +1,5 @@
 import React from 'react';
-import './Footer.css';
+import './stylesheet.css';
 import { MdEmail, MdPhone, MdLocationOn } from 'react-icons/md';
 
 const Footer = () => {

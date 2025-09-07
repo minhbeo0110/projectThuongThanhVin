@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from './Header';
-import Footer from './Footer';
-import './LayoutCommon.css';
+import Header from './header';
+import Footer from './footer';
+import './stylesheet.css';
 
 const LayoutCommon = ({ children }) => {
   return (

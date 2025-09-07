@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './NewsEventsPage.css';
-import Img from '../common/Img';
-import Button from '../common/Button';
+import './stylesheet.css';
+import Img from '../common/img';
+import Button from '../common/button';
 
 import image29 from '../../image/image 29.jpg';
 import image30 from '../../image/image 30.jpg';

@@ -1,5 +1,5 @@
 import React from 'react';
-import NewsEventsPage from '../components/news/NewsEventsPage';
+import NewsEventsPage from '../components/new-event';
 
 function NewsEventsPageWrapper() {
   return (

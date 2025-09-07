@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import SelectedItemDisplay from '../components/common/SelectedItemDisplay';
-import './ItemDetailPage.css';
+import Img from '../img';
+import './stylesheet.css';
 
 const ItemDetailPage = () => {
   const location = useLocation();
@@ -43,13 +43,35 @@ const ItemDetailPage = () => {
     }, 100);
   };
 
+  // Get content from item, fallback to sample content if not provided
+  const getContent = () => {
+    if (item.content) {
+      return item.content;
+    }
+    return "No content available";
+  };
+
   return (
     <div className="item-detail-page">
       <div className="item-detail-container">
         <button className="back-button" onClick={handleBack}>
           <span className="menu-name">{getMenuName(item.category)}</span> &gt; <span className="item-title">{item.title}</span>
         </button>
-        <SelectedItemDisplay item={item} />
+        <div className="selected-item-display">
+          <div className="content-container">
+            <div className="article-container">
+              <h1 className="article-title">{item.title}</h1>
+            </div>
+            <div className="article-content">
+              <p>{getContent()}</p>
+            </div>
+            {item.image && (
+              <div className="article-image">
+                <Img src={item.image} alt={item.title} className="article-image-img" />
+              </div>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );

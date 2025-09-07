@@ -1,9 +1,9 @@
 import React from 'react';
-import './ResearchAreas.css';
-import Img from '../common/Img';
-import image11 from '../../image/image 11.jpg';
-import image15 from '../../image/image 15.jpg';
-import image16 from '../../image/image 16.jpg';
+import './stylesheet.css';
+import Img from '../../common/img';
+import image11 from '../../../image/image 11.jpg';
+import image15 from '../../../image/image 15.jpg';
+import image16 from '../../../image/image 16.jpg';
 
 const ResearchAreaCard = ({ image, title, author }) => {
   return (

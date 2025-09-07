@@ -1,9 +1,9 @@
 import React from 'react';
-import './AboutUs.css';
-import ResearchAreas from './ResearchAreas';
-import People from './People';
-import SupportStaff from './SupportStaff';
-import PrincipalInvestigators from './PrincipalInvestigators';
+import './stylesheet.css';
+import ResearchAreas from '../research-area';
+import People from '../director';
+import SupportStaff from '../support-staff';
+import PrincipalInvestigators from '../principal';
 
 const AboutUs = () => {
   return (

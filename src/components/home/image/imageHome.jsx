@@ -1,7 +1,7 @@
 import React from 'react';
-import './HeroSection.css';
-import homeImage from '../../image/image 6.jpg';
-import Img from '../common/Img';
+import './stylesheet.css';
+import homeImage from '../../../image/image 6.jpg';
+import Img from '../../common/img';
 
 const HeroSection = () => {
   return (

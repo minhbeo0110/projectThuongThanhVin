@@ -12,3 +12,29 @@ export const redirectTo = (path, newTab = false) => {
     window.location.href = path;
   }
 };
+
+/**
+ * Scroll to a specific section with smooth behavior
+ * @param {string} sectionId - The ID of the section to scroll to
+ * @param {number} offset - Offset from top (default: 80)
+ */
+export const scrollToSection = (sectionId, offset = 80) => {
+  const element = document.getElementById(sectionId);
+  if (element) {
+    const elementPosition = element.offsetTop - offset;
+    window.scrollTo({
+      top: elementPosition,
+      behavior: 'smooth'
+    });
+  }
+};
+
+/**
+ * Scroll to top of the page with smooth behavior
+ */
+export const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+};

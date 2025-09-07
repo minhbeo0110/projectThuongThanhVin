@@ -1,11 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './PrincipalInvestigators.css';
-import Img from '../common/Img';
-import image21 from '../../image/image 21.jpg';
-import image22 from '../../image/image 22.jpg';
-import image23 from '../../image/image 23.jpg';
-import image24 from '../../image/image 24.jpg';
+import './stylesheet.css';
+import Img from '../../common/img';
+import image21 from '../../../image/image 21.jpg';
+import image22 from '../../../image/image 22.jpg';
+import image23 from '../../../image/image 23.jpg';
+import image24 from '../../../image/image 24.jpg';
 
 const PrincipalInvestigatorCard = ({ image, name, title, affiliation, project, onClick }) => {
   return (

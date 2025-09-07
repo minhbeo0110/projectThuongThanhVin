@@ -1,7 +1,7 @@
 import React from 'react';
-import './EventsPage.css';
-import Img from '../common/Img';
-import Button from '../common/Button';
+import './stylesheet.css';
+import Img from '../common/img';
+import Button from '../common/button';
 
 import image34 from '../../image/image 34.jpg';
 import image35 from '../../image/image 35.jpg';

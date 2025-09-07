@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import LayoutCommon from './components/layout/LayoutCommon';
+import LayoutCommon from './components/layout/index';
 import HomePage from './components/home/HomePage';
 import AboutUsPage from './pages/AboutUsPage';
 import NewsEventsPage from './pages/NewsEventsPage';
 import PublicationsPageWrapper from './pages/PublicationsPage';
 import FacilitiesPageWrapper from './pages/FacilitiesPage';
 import ConferenceCalendarPageWrapper from './pages/ConferenceCalendarPage';
-import ItemDetailPage from './pages/ItemDetailPage';
+import ItemDetailPage from './components/common/item-detail';
 import './App.css';
 
 function App() {

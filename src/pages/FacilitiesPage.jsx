@@ -1,5 +1,5 @@
 import React from 'react';
-import FacilitiesPage from '../components/facilities/FacilitiesPage';
+import FacilitiesPage from '../components/facilities';
 
 function FacilitiesPageWrapper() {
   return (

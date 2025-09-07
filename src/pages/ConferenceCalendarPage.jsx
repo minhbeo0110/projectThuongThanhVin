@@ -1,5 +1,5 @@
 import React from 'react';
-import ConferenceCalendarPage from '../components/conference/ConferenceCalendarPage';
+import ConferenceCalendarPage from '../components/conference';
 
 const ConferenceCalendarPageWrapper = () => {
   return <ConferenceCalendarPage />;

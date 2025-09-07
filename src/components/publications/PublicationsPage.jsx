@@ -1,10 +1,10 @@
 import React, { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './PublicationsPage.css';
-import Img from '../common/Img';
+import Img from '../common/img';
 import { FaClock } from 'react-icons/fa';
 import { redirectTo } from '../common/utils';
-import Button from '../common/Button';
+import Button from '../common/button';
 
 import image40 from '../../image/image 40.jpg';
 import image41 from '../../image/image 41.jpg';

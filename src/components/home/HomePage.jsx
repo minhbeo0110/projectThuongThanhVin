@@ -1,11 +1,11 @@
 import React from 'react';
-import HeroSection from './HeroSection';
-import NewsEventsSection from '../news/NewsEventsSection';
+import ImageHome from './image/imageHome';
+import NewsEventsSection from './news-events';
 
 const HomePage = () => {
   return (
     <div className="home-page">
-      <HeroSection />
+      <ImageHome />
       <NewsEventsSection />
     </div>
   );

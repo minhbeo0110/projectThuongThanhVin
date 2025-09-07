@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './NewsEventsSection.css';
-import Img from '../common/Img';
-import Button from '../common/Button';
-import newsImage from '../../image/image 9.jpg';
+import './stylesheet.css';
+import Img from '../../common/img';
+import Button from '../../common/button';
+import newsImage from '../../../image/image 9.jpg';
 
 const NewsCard = ({ month, day, title, category, link, onClick }) => {
   return (

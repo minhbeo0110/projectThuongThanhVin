@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './People.css';
-import Img from '../common/Img';
-import Button from '../common/Button';
-import person1 from '../../image/image 12.jpg';
-import person2 from '../../image/image 13.jpg';
-import person3 from '../../image/image 14.jpg';
+import './stylesheet.css';
+import Img from '../../common/img';
+import Button from '../../common/button';
+import person1 from '../../../image/image 12.jpg';
+import person2 from '../../../image/image 13.jpg';
+import person3 from '../../../image/image 14.jpg';
 
 const PersonCard = ({ image, name, title, onClick }) => {
   return (

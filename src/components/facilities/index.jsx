@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import './FacilitiesPage.css';
-import Img from '../common/Img';
+import './stylesheet.css';
+import Img from '../common/img';
 import image44 from '../../image/image 44.jpg';
 
 const FacilityAccordion = ({ title, description, isOpen, onToggle }) => {
